@@ -1,14 +1,14 @@
-FROM amazon/aws-eb-python:3.4.2-onbuild-3.5.1
+FROM centos
 
 MAINTAINER salk.onur@gmail.com
 
-RUN apt-get update \
-      && apt-get install -y sudo python-pip \
-      && rm -rf /var/lib/apt/lists/* \
+RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-6.noarch.rpm \
+      && yum update -y \
+      && yum install -y python-pip \
       && pip install flask
 
 COPY . /src
 
 EXPOSE 5000
 
-CMD /src && python hello.py
+CMD cd /src && python hello.py

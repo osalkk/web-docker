@@ -8,5 +8,5 @@ def index():
     return render_template('index.html',title='Home')
 
 if __name__ == '__main__':
-    #app.debug = True
-    app.run()
+    app.run(host='0.0.0.0')
+
