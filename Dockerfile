@@ -2,7 +2,7 @@ FROM centos
 
 MAINTAINER salk.onur@gmail.com
 
-RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-6.noarch.rpm \
+RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm \
       && yum update -y \
       && yum install -y python-pip \
       && pip install flask
